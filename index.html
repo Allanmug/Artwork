@@ -12,11 +12,10 @@
     <header>
         <div class="top-bar">
             <div class="auth-options">
-                <a href="login.html" class="btn">Login</a>
-                <a href="logout.html" class="btn">Logout</a>
+                <a href="login.html">Login</a> | <a href="logout.html">Logout</a>
             </div>
             <div class="subscribe">
-                <a href="subscribe.html" class="btn">Subscribe</a>
+                <a href="subscribe.html">Subscribe</a>
             </div>
         </div>
         <div class="header-main">
@@ -24,8 +23,10 @@
                 <img src="logo.png" alt="Art Gallery Logo">
             </div>
             <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search for artworks...">
-                <button id="searchBtn" class="btn">Search</button>
+                <input type="text" placeholder="Search for artworks...">
+                <button onclick="searchArtworks()">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
             <nav class="main-menu">
                 <ul>
@@ -44,9 +45,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Discover the World of Art</h1>
-            <p>Explore stunning artworks and connect with amazing artists.</p>
-            <a href="gallery.html" class="btn hero-btn">View Gallery</a>
+            <h1>Welcome to Art Gallery</h1>
+            <p>Discover amazing artworks and exhibitions</p>
+            <a href="gallery.html" class="hero-btn">Explore Now</a>
         </div>
     </section>
 
@@ -66,7 +67,6 @@
                 <img src="event3.jpg" alt="Event 3">
                 <p>Event 3 Description</p>
             </div>
-            <!-- Add more events as needed -->
         </section>
 
         <section class="art-features">
@@ -96,36 +96,30 @@
                     <img src="assets/images/art6.jpeg" alt="Artwork 6">
                     <p>Artwork 6 Description</p>
                 </div>
-                <!-- Add more artworks as needed -->
             </div>
         </section>
 
         <section class="artist-highlights">
             <h2>Artist Highlights</h2>
             <div class="artist">
-                <img src="assets/images/artist1.jpeg" alt="Artist 1">
-                <h3>Artist 1</h3>
-                <p>Brief bio of artist 1</p>
+                <img src="artist1.jpg" alt="Artist 1">
+                <p>Artist 1 Name</p>
             </div>
             <div class="artist">
-                <img src="assets/images/artist2.jpeg" alt="Artist 2">
-                <h3>Artist 2</h3>
-                <p>Brief bio of artist 2</p>
+                <img src="artist2.jpg" alt="Artist 2">
+                <p>Artist 2 Name</p>
             </div>
             <div class="artist">
-                <img src="assets/images/artist3.jpeg" alt="Artist 3">
-                <h3>Artist 3</h3>
-                <p>Brief bio of artist 3</p>
+                <img src="artist3.jpg" alt="Artist 3">
+                <p>Artist 3 Name</p>
             </div>
-            <!-- Add more artists as needed -->
         </section>
 
         <section class="newsletter-signup">
             <h2>Subscribe to Our Newsletter</h2>
-            <p>Get the latest updates on new artworks, artists, and events.</p>
-            <form action="subscribe.html" method="POST">
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <button type="submit" class="btn">Subscribe</button>
+            <form action="subscribe.html">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
             </form>
         </section>
     </main>
@@ -173,13 +167,11 @@
             const menu = document.querySelector('.main-menu ul');
             menu.classList.toggle('show');
         }
-
-        document.getElementById('searchBtn').addEventListener('click', function() {
-            const query = document.getElementById('searchInput').value;
-            if (query) {
-                window.location.href = `search.html?q=${query}`;
-            }
-        });
+        
+        function searchArtworks() {
+            const query = document.querySelector('.search-bar input').value;
+            window.location.href = `search.html?q=${query}`;
+        }
     </script>
 </body>
 </html>

@@ -10,37 +10,21 @@ body {
 
 header {
     background-color: #fff;
-    color: #333;
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ddd;
 }
 
 .top-bar {
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
 }
 
 .auth-options a, .subscribe a {
+    color: #333;
     text-decoration: none;
     margin: 0 10px;
-}
-
-.btn {
-    padding: 8px 16px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-weight: 700;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #333;
+    font-size: 0.9em;
 }
 
 .header-main {
@@ -67,7 +51,7 @@ header {
 }
 
 .search-bar button {
-    padding: 8px 16px;
+    padding: 8px 12px;
     border: none;
     background-color: #000;
     color: #fff;
@@ -113,54 +97,49 @@ header {
 
 .menu-icon i {
     font-size: 24px;
+    font-size: 24px;
     color: #333;
 }
 
-/* Hero Section */
 .hero {
     background: url('hero.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
     padding: 100px 20px;
     position: relative;
-    overflow: hidden;
-}
-
-.hero:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    display: inline-block;
+    border-radius: 10px;
 }
 
 .hero h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
+    font-size: 2.5em;
+    margin: 0 0 20px;
 }
 
 .hero p {
     font-size: 1.2em;
-    margin-bottom: 30px;
+    margin: 0 0 20px;
 }
 
-.hero .hero-btn {
+.hero a {
+    display: inline-block;
+    padding: 10px 20px;
     background-color: #fff;
-    color: #000;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.hero .hero-btn:hover {
+.hero a:hover {
     background-color: #ddd;
 }
 
-/* Main Content Section */
 .trending-events, .art-features, .artist-highlights, .newsletter-signup {
     padding: 20px;
     background-color: #fff;
@@ -169,31 +148,24 @@ header {
     margin: 20px;
 }
 
-.trending-events {
-    display: flex;
-    overflow-x: auto;
-    padding: 20px;
-    border: 2px solid #ddd;
-}
-
 .trending-events h2, .art-features h2, .artist-highlights h2, .newsletter-signup h2 {
     font-size: 2em;
     margin-bottom: 20px;
 }
 
-.event {
+.event, .artist {
     min-width: 200px;
     margin: 0 10px;
     text-align: center;
 }
 
-.event img {
+.event img, .artist img {
     max-width: 100%;
     border-radius: 10px;
     transition: transform 0.3s;
 }
 
-.event img:hover {
+.event img:hover, .artist img:hover {
     transform: scale(1.05);
 }
 
@@ -245,28 +217,6 @@ header {
     color: #333;
 }
 
-.artist-highlights {
-    text-align: center;
-}
-
-.artist {
-    display: inline-block;
-    margin: 20px;
-    text-align: center;
-}
-
-.artist img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-
-.artist img:hover {
-    transform: scale(1.1);
-}
-
 .newsletter-signup form {
     display: flex;
     flex-direction: column;
@@ -275,18 +225,19 @@ header {
 
 .newsletter-signup input {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
     margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .newsletter-signup button {
     padding: 10px 20px;
+    border: none;
     background-color: #000;
     color: #fff;
-    border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -294,7 +245,6 @@ header {
     background-color: #333;
 }
 
-/* Footer Section */
 footer {
     background-color: #444;
     color: #fff;
@@ -305,10 +255,13 @@ footer {
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
+    flex-wrap: wrap;
 }
 
 .footer-content div {
     width: 30%;
+    min-width: 200px;
+    margin-bottom: 20px;
 }
 
 .social-media a img {
@@ -351,6 +304,23 @@ footer {
         flex-wrap: wrap;
     }
 
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-bar input {
+        width: calc(100% - 40px);
+        margin-right: -4px;
+        border-radius: 4px 0 0 4px;
+    }
+
+    .search-bar button {
+        width: 40px;
+        border-radius: 0 4px 4px 0;
+        padding: 0;
+    }
+
     .main-menu ul {
         display: none;
         flex-direction: column;
@@ -360,7 +330,7 @@ footer {
         right: 0;
         width: 100%;
         text-align: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid #ddd;
     }
 
     .main-menu ul.show {
@@ -373,17 +343,5 @@ footer {
 
     .menu-icon {
         display: block;
-    }
-
-    .search-bar {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        margin-top: 10px;
-    }
-
-    .search-bar input {
-        width: 100%;
-        margin-bottom: 10px;
     }
 }
