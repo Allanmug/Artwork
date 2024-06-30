@@ -12,10 +12,11 @@
     <header>
         <div class="top-bar">
             <div class="auth-options">
-                <a href="login.html">Login</a> | <a href="logout.html">Logout</a>
+                <a href="login.html" class="btn">Login</a>
+                <a href="logout.html" class="btn">Logout</a>
             </div>
             <div class="subscribe">
-                <a href="subscribe.html">Subscribe</a>
+                <a href="subscribe.html" class="btn">Subscribe</a>
             </div>
         </div>
         <div class="header-main">
@@ -23,7 +24,8 @@
                 <img src="logo.png" alt="Art Gallery Logo">
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Search for artworks...">
+                <input type="text" id="searchInput" placeholder="Search for artworks...">
+                <button id="searchBtn" class="btn">Search</button>
             </div>
             <nav class="main-menu">
                 <ul>
@@ -32,13 +34,26 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <i class="fa fa-bars"></i>
+                </div>
             </nav>
         </div>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover the World of Art</h1>
+            <p>Explore stunning artworks and connect with amazing artists.</p>
+            <a href="gallery.html" class="btn hero-btn">View Gallery</a>
+        </div>
+    </section>
+
     <!-- Main Content Section -->
     <main>
         <section class="trending-events">
+            <h2>Trending Events</h2>
             <div class="event">
                 <img src="event1.jpg" alt="Event 1">
                 <p>Event 1 Description</p>
@@ -84,6 +99,35 @@
                 <!-- Add more artworks as needed -->
             </div>
         </section>
+
+        <section class="artist-highlights">
+            <h2>Artist Highlights</h2>
+            <div class="artist">
+                <img src="assets/images/artist1.jpeg" alt="Artist 1">
+                <h3>Artist 1</h3>
+                <p>Brief bio of artist 1</p>
+            </div>
+            <div class="artist">
+                <img src="assets/images/artist2.jpeg" alt="Artist 2">
+                <h3>Artist 2</h3>
+                <p>Brief bio of artist 2</p>
+            </div>
+            <div class="artist">
+                <img src="assets/images/artist3.jpeg" alt="Artist 3">
+                <h3>Artist 3</h3>
+                <p>Brief bio of artist 3</p>
+            </div>
+            <!-- Add more artists as needed -->
+        </section>
+
+        <section class="newsletter-signup">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the latest updates on new artworks, artists, and events.</p>
+            <form action="subscribe.html" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </section>
     </main>
 
     <!-- Footer Section -->
@@ -123,5 +167,19 @@
             <p>&copy; 2024 Art Gallery. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.main-menu ul');
+            menu.classList.toggle('show');
+        }
+
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            const query = document.getElementById('searchInput').value;
+            if (query) {
+                window.location.href = `search.html?q=${query}`;
+            }
+        });
+    </script>
 </body>
 </html>
