@@ -20,7 +20,7 @@
         </div>
         <div class="header-main">
             <div class="logo">
-                <img src="logo.png" alt="Art Gallery Logo">
+                <img src="assets/images/logo1.png" alt="Art Gallery Logo">
             </div>
             <div class="search-bar">
                 <input type="text" placeholder="Search for artworks...">
@@ -71,7 +71,7 @@
 
         <section class="art-features">
             <h2>Featured Artworks</h2>
-            <div class="artwork-grid">
+            <div class="artwork-slider">
                 <div class="artwork">
                     <img src="assets/images/art1.jpeg" alt="Artwork 1">
                     <p>Artwork 1 Description</p>
@@ -98,6 +98,7 @@
                 </div>
             </div>
         </section>
+        
 
         <section class="artist-highlights">
             <h2>Artist Highlights</h2>
@@ -163,11 +164,54 @@
     </footer>
 
     <script>
+        const slider = document.querySelector('.artwork-slider');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 3; //scroll-fast
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        function autoScroll() {
+            let scrollAmount = 0;
+            const slideTimer = setInterval(() => {
+                slider.scrollLeft += 1;
+                scrollAmount += 1;
+                if (scrollAmount >= slider.offsetWidth / 3) {
+                    clearInterval(slideTimer);
+                }
+            }, 25);
+        }
+
+        setInterval(autoScroll, 20000); // Change the interval as needed
+
         function toggleMenu() {
             const menu = document.querySelector('.main-menu ul');
             menu.classList.toggle('show');
         }
-        
+
         function searchArtworks() {
             const query = document.querySelector('.search-bar input').value;
             window.location.href = `search.html?q=${query}`;
