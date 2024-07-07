@@ -93,6 +93,7 @@ header {
 /* Hero Section */
 .hero {
     background: url('assets/images/logo1.png') no-repeat center center/cover;
+    background-attachment: fixed;
     height: 60vh;
     display: flex;
     justify-content: center;
@@ -100,6 +101,16 @@ header {
     text-align: center;
     color: #fff;
     padding: 0 20px;
+} 
+.overlay {
+    position: absolute; 
+    width: 75%;
+    height: 50%;
+    border-radius: 5%;
+    background: rgba(0, 0, 0, 0.8); /* Adjust the opacity as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero h1 {
