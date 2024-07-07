@@ -150,7 +150,7 @@ section h2 {
     text-align: center;
 }
 
-.trending-events, .artist-highlights {
+.event-slider, .artist-slider{
     display: flex;
     justify-content: space-around;
     display: flex;
