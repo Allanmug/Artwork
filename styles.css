@@ -300,7 +300,7 @@ footer {
     }
 
     .menu-icon {
-        display: flex;
+        display: block;
     }
     .overlay {
        
