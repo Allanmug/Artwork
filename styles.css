@@ -277,10 +277,13 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .header-main, .main-menu ul {
-        flex-direction: column;
+       .header-main {
+        display: flex;
+        padding: 0 5px;
     }
-
+    .logo img {
+        width: 90px;
+    }
     .main-menu ul {
         display: none;
         width: 100%;
@@ -297,12 +300,15 @@ footer {
     }
 
     .menu-icon {
-        display: block;
+        display: flex;
+    }
+    .overlay {
+       
+        width: 75%;
+        height: 25%;
+       
     }
 
-    .hero {
-        height: 40vh;
-    }
 
     .hero h1 {
         font-size: 2em;
