@@ -312,5 +312,7 @@ footer {
         font-size: 1em;
     }
 
-    
+    .artwork-slider {
+        flex-direction: row;
+    }
 }
