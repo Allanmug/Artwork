@@ -277,12 +277,15 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-       .header-main {
+     .header-main {
         display: flex;
         padding: 0 5px;
     }
     .logo img {
         width: 90px;
+    }
+    .main-menu {
+        display: block;
     }
     .main-menu ul {
         display: none;
@@ -300,7 +303,7 @@ footer {
     }
 
     .menu-icon {
-        display: block;
+        display: flex;
     }
     .overlay {
        
@@ -320,5 +323,10 @@ footer {
 
     .artwork-slider {
         flex-direction: row;
+    }
+    .footer-content {
+        display: inline-block;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
 }
