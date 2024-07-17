@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +10,13 @@
     <link rel="manifest" href="/site.webmanifest">
     <title>Art Gallery Home</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
-
 <body>
     <!-- Header Section -->
     <header>
         <div class="top-bar">
             <div class="auth-options">
-                <a href="signin.html">sign in</a> | <a href="login.html">Login</a>
+                <a href="signin.html">Sign In</a> | <a href="login.html">Login</a>
             </div>
             <div class="subscribe">
                 <a href="subscribe.html">Subscribe</a>
@@ -30,29 +27,28 @@
                 <img src="assets/images/logo1.png" alt="Art Gallery Logo">
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Search for artworks...">
+                <input type="text" id="search-input" placeholder="Search for artworks...">
                 <button onclick="searchArtworks()">
                     <i class="fas fa-search"></i>
                 </button>
+                <div id="suggestions" class="suggestions"></div>
             </div>
             <nav class="main-menu">
-                <ul id="menu-items">
+                <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="Cart.html">Cart</a></li>
                     <li><a href="Artist_profile.html">Artist's profile</a></li>
-                    <li><a href="Gallary.html">Gallary</a></li>
+                    <li><a href="Gallary.html">Gallery</a></li>
                     <li><a href="Blog.html">Blog</a></li>
                     <li><a href="About.html">About us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="menu-icon" onclick="toggleMenu()">
                     <i class="fa fa-bars"></i>
-                </div>        
+                </div>
             </nav>
-            <div class="overlay" onclick="hideMenu()"></div>
         </div>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="overlay">
@@ -68,16 +64,16 @@
     <main>
         <section class="trending-events">
             <h2>Trending Events</h2>
-            <div class='event-slider'>
-                <div class="event">
+            <div class="event-slider">
+                <div class="event" data-searchable>
                     <img src="event1.jpg" alt="Event 1">
                     <p>Event 1 Description</p>
                 </div>
-                <div class="event">
+                <div class="event" data-searchable>
                     <img src="event2.jpg" alt="Event 2">
                     <p>Event 2 Description</p>
                 </div>
-                <div class="event">
+                <div class="event" data-searchable>
                     <img src="event3.jpg" alt="Event 3">
                     <p>Event 3 Description</p>
                 </div>
@@ -87,66 +83,58 @@
         <section class="art-features">
             <h2>Featured Artworks</h2>
             <div class="artwork-slider">
-                <div class="artwork">
+                <div class="artwork" data-searchable>
                     <img src="assets/images/art1.jpeg" alt="Artwork 1">
                     <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br> Abstract Art</p>
-
                     <div class="explore"><a href="gallery.html">Explore Now</a></div>
                 </div>
-                <div class="artwork">
+                <div class="artwork" data-searchable>
                     <img src="assets/images/art2.jpeg" alt="Artwork 2">
                     <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br> Abstract Art</p>
-
-
                     <div class="explore"><a href="gallery.html">Explore Now</a></div>
                 </div>
-                <div class="artwork">
+                <div class="artwork" data-searchable>
                     <img src="assets/images/art3.jpeg" alt="Artwork 3">
                     <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br> Abstract Art</p>
                     <div class="explore"><a href="gallery.html">Explore Now</a></div>
                 </div>
-                <div class="artwork">
+                <div class="artwork" data-searchable>
                     <img src="assets/images/art4.jpeg" alt="Artwork 4">
                     <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br> Abstract Art</p>
-
                     <div class="explore"><a href="gallery.html">Explore Now</a></div>
                 </div>
-                <div class="artwork">
+                <div class="artwork" data-searchable>
                     <img src="assets/images/art5.jpeg" alt="Artwork 5">
                     <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br> Abstract Art</p>
-
                     <div class="explore"><a href="gallery.html">Explore Now</a></div>
                 </div>
-                <div class="artwork">
+                <div class="artwork" data-searchable>
                     <img src="assets/images/art6.jpeg" alt="Artwork 6">
                     <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br> Abstract Art</p>
-
                     <div class="explore"><a href="gallery.html">Explore Now</a></div>
                 </div>
             </div>
-
         </section>
-
 
         <section class="artist-highlights">
             <h2>Artist Highlights</h2>
             <div class="artist-slider">
-                <div class="artist">
+                <div class="artist" data-searchable>
                     <img src="artist1.jpg" alt="Artist 1">
                     <p>Artist 1 Name</p>
                 </div>
-                <div class="artist">
+                <div class="artist" data-searchable>
                     <img src="artist2.jpg" alt="Artist 2">
                     <p>Artist 2 Name</p>
                 </div>
-                <div class="artist">
+                <div class="artist" data-searchable>
                     <img src="artist3.jpg" alt="Artist 3">
                     <p>Artist 3 Name</p>
                 </div>
             </div>
         </section>
 
-        <section class="newsletter-signup">
+        <section class="newsletter-signup" data-searchable>
             <h2>Subscribe to Our Newsletter</h2>
             <form action="subscribe.html">
                 <input type="email" placeholder="Enter your email" required>
@@ -158,40 +146,31 @@
     <!-- Footer Section -->
     <footer>
         <div class="footer-content">
-            <div class="contact-info">
+            <div class="contact-info" data-searchable>
                 <h3>Contact Us</h3>
                 <p>Email: info@artgallery.com</p>
                 <p>Phone: +123 456 7890</p>
                 <p>Location: 123 Art Street, Art City, AC 12345</p>
             </div>
-            <div class="quick-links">
+            <div class="quick-links" data-searchable>
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="Cart.html">Cart</a></li>
-                    <li><a href="Artist_profile.html">Artist's profile</a></li>
-                    <li><a href="Gallary.html">Gallary</a></li>
-                    <li><a href="Blog.html">Blog</a></li>
-                    <li><a href="About.html">About us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                    <li><a href="careers.html">Careers</a></li>
                 </ul>
             </div>
-            <div class="social-media">
+            <div class="social-media" data-searchable>
                 <h3>Follow Us</h3>
-                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook"></i>
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <a href="https://www.twitter.com" target="_blank">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <a href="https://www.instagram.com" target="_blank">
                     <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
                 </a>
             </div>
         </div>
@@ -199,69 +178,6 @@
             <p>&copy; 2024 Art Gallery. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        const slider = document.querySelector('.artwork-slider');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        slider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            slider.classList.add('active');
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
-
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.classList.remove('active');
-        });
-
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.classList.remove('active');
-        });
-
-        slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 3; //scroll-fast
-            slider.scrollLeft = scrollLeft - walk;
-        });
-
-        function autoScroll() {
-            let scrollAmount = 0;
-            const slideTimer = setInterval(() => {
-                slider.scrollLeft += 1;
-                scrollAmount += 1;
-                if (scrollAmount >= slider.offsetWidth / 3) {
-                    clearInterval(slideTimer);
-                }
-            }, 25);
-        }
-
-        setInterval(autoScroll, 20000); // Change the interval as needed
-        function toggleMenu() {
-            var menu = document.getElementById("menu-items");
-            var overlay = document.querySelector(".overlay");
-            menu.classList.toggle("show");
-            overlay.classList.toggle("active");
-        }
-
-        function hideMenu() {
-            var menu = document.getElementById("menu-items");
-            var overlay = document.querySelector(".overlay");
-            menu.classList.remove("show");
-            overlay.classList.remove("active");
-        }
-
-        function searchArtworks() {
-            const query = document.querySelector('.search-bar input').value;
-            window.location.href = `search.html?q=${query}`;
-        }
-    </script>
+    <script src="scripts.js"></script>
 </body>
-
 </html>
