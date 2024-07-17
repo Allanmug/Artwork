@@ -60,7 +60,6 @@ header {
     padding: 10px;
     cursor: pointer;
 }
-
 .main-menu ul {
     display: flex;
     list-style: none;
@@ -90,6 +89,20 @@ header {
     cursor: pointer;
 }
 
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.overlay.active {
+    display: block;
+}
 /* Hero Section */
 .hero {
     background: url('assets/images/logo1.png') no-repeat center center/cover;
@@ -101,11 +114,15 @@ header {
     text-align: center;
     color: #fff;
     padding: 0 20px;
+    
+    
 } 
 .overlay {
-    position: absolute; 
+    margin-top: 20%;
+    margin-left: 12.5%;
     width: 75%;
     height: 50%;
+    position: absolute; 
     border-radius: 5%;
     background: rgba(0, 0, 0, 0.8); /* Adjust the opacity as needed */
     display: flex;
@@ -316,12 +333,17 @@ footer {
     .logo img {
         width: 90px;
     }
-    .main-menu {
-        display: block;
-    }
     .main-menu ul {
         display: none;
+        flex-direction: column;
         width: 100%;
+        margin-left: 0;
+        background-color: #fff;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 20;
     }
 
     .main-menu ul.show {

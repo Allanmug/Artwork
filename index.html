@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="styles.css">
 
 </head>
+
 <body>
     <!-- Header Section -->
     <header>
@@ -34,7 +36,7 @@
                 </button>
             </div>
             <nav class="main-menu">
-                <ul>
+                <ul id="menu-items">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="Cart.html">Cart</a></li>
                     <li><a href="Artist_profile.html">Artist's profile</a></li>
@@ -42,24 +44,24 @@
                     <li><a href="Blog.html">Blog</a></li>
                     <li><a href="About.html">About us</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    
                 </ul>
                 <div class="menu-icon" onclick="toggleMenu()">
                     <i class="fa fa-bars"></i>
-                </div>
+                </div>        
             </nav>
+            <div class="overlay" onclick="hideMenu()"></div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="overlay">
-        <div class="hero-content">
-            <h1>Welcome to Art Gallery</h1>
-            <p>Discover amazing artworks and exhibitions</p>
-            <a href="gallery.html" class="hero-btn">Explore Now</a>
+            <div class="hero-content">
+                <h1>Welcome to Art Gallery</h1>
+                <p>Discover amazing artworks and exhibitions</p>
+                <a href="gallery.html" class="hero-btn">Explore Now</a>
+            </div>
         </div>
-    </div>
     </section>
 
     <!-- Main Content Section -->
@@ -67,19 +69,19 @@
         <section class="trending-events">
             <h2>Trending Events</h2>
             <div class='event-slider'>
-            <div class="event">
-                <img src="event1.jpg" alt="Event 1">
-                <p>Event 1 Description</p>
+                <div class="event">
+                    <img src="event1.jpg" alt="Event 1">
+                    <p>Event 1 Description</p>
+                </div>
+                <div class="event">
+                    <img src="event2.jpg" alt="Event 2">
+                    <p>Event 2 Description</p>
+                </div>
+                <div class="event">
+                    <img src="event3.jpg" alt="Event 3">
+                    <p>Event 3 Description</p>
+                </div>
             </div>
-            <div class="event">
-                <img src="event2.jpg" alt="Event 2">
-                <p>Event 2 Description</p>
-            </div>
-            <div class="event">
-                <img src="event3.jpg" alt="Event 3">
-                <p>Event 3 Description</p>
-            </div>
-        </div>
         </section>
 
         <section class="art-features">
@@ -87,61 +89,61 @@
             <div class="artwork-slider">
                 <div class="artwork">
                     <img src="assets/images/art1.jpeg" alt="Artwork 1">
-                       <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br>  Abstract Art</p>
-                
-                   <div class="explore"><a href="gallery.html">Explore Now</a></div>
+                    <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br> Abstract Art</p>
+
+                    <div class="explore"><a href="gallery.html">Explore Now</a></div>
                 </div>
                 <div class="artwork">
                     <img src="assets/images/art2.jpeg" alt="Artwork 2">
-                       <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br>  Abstract Art</p>
-                
-            
-            <div class="explore"><a href="gallery.html">Explore Now</a></div>
+                    <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br> Abstract Art</p>
+
+
+                    <div class="explore"><a href="gallery.html">Explore Now</a></div>
                 </div>
                 <div class="artwork">
                     <img src="assets/images/art3.jpeg" alt="Artwork 3">
-                    <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br>  Abstract Art</p>
-                   <div class="explore"><a href="gallery.html">Explore Now</a></div>
+                    <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br> Abstract Art</p>
+                    <div class="explore"><a href="gallery.html">Explore Now</a></div>
                 </div>
                 <div class="artwork">
                     <img src="assets/images/art4.jpeg" alt="Artwork 4">
-                       <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br>  Abstract Art</p>
-                
-                   <div class="explore"><a href="gallery.html">Explore Now</a></div>
+                    <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br> Abstract Art</p>
+
+                    <div class="explore"><a href="gallery.html">Explore Now</a></div>
                 </div>
                 <div class="artwork">
                     <img src="assets/images/art5.jpeg" alt="Artwork 5">
-                       <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br>  Abstract Art</p>
-                
-                   <div class="explore"><a href="gallery.html">Explore Now</a></div>
+                    <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br> Abstract Art</p>
+
+                    <div class="explore"><a href="gallery.html">Explore Now</a></div>
                 </div>
                 <div class="artwork">
                     <img src="assets/images/art6.jpeg" alt="Artwork 6">
-                       <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br>  Abstract Art</p>
-                
-                   <div class="explore"><a href="gallery.html">Explore Now</a></div>
+                    <p>Name of artist <span style="margin-left: 20px;"></span>Date of birth <br> Abstract Art</p>
+
+                    <div class="explore"><a href="gallery.html">Explore Now</a></div>
                 </div>
             </div>
-                     
+
         </section>
-        
+
 
         <section class="artist-highlights">
             <h2>Artist Highlights</h2>
             <div class="artist-slider">
-            <div class="artist">
-                <img src="artist1.jpg" alt="Artist 1">
-                <p>Artist 1 Name</p>
+                <div class="artist">
+                    <img src="artist1.jpg" alt="Artist 1">
+                    <p>Artist 1 Name</p>
+                </div>
+                <div class="artist">
+                    <img src="artist2.jpg" alt="Artist 2">
+                    <p>Artist 2 Name</p>
+                </div>
+                <div class="artist">
+                    <img src="artist3.jpg" alt="Artist 3">
+                    <p>Artist 3 Name</p>
+                </div>
             </div>
-            <div class="artist">
-                <img src="artist2.jpg" alt="Artist 2">
-                <p>Artist 2 Name</p>
-            </div>
-            <div class="artist">
-                <img src="artist3.jpg" alt="Artist 3">
-                <p>Artist 3 Name</p>
-            </div>
-        </div>
         </section>
 
         <section class="newsletter-signup">
@@ -241,10 +243,18 @@
         }
 
         setInterval(autoScroll, 20000); // Change the interval as needed
-
         function toggleMenu() {
-            const menu = document.querySelector('.main-menu ul');
-            menu.classList.toggle('show');
+            var menu = document.getElementById("menu-items");
+            var overlay = document.querySelector(".overlay");
+            menu.classList.toggle("show");
+            overlay.classList.toggle("active");
+        }
+
+        function hideMenu() {
+            var menu = document.getElementById("menu-items");
+            var overlay = document.querySelector(".overlay");
+            menu.classList.remove("show");
+            overlay.classList.remove("active");
         }
 
         function searchArtworks() {
@@ -253,4 +263,5 @@
         }
     </script>
 </body>
+
 </html>
