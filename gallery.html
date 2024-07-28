@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles2.css">
+    <title>Art Gallery</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="top-bar">
+            <div class="auth-options">
+                <a href="signin.html">Sign in</a> | <a href="login.html">Login</a>
+            </div>
+            <div class="subscribe">
+                <a href="subscribe.html">Subscribe</a>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="logo">
+                <img src="assets/images/logo1.png" alt="Art Gallery Logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for artworks...">
+                <button onclick="searchArtworks()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="artist_profile.html">Artist's Profile</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <h2>Art Gallery</h2>
+        <div class="filter-bar">
+            <button class="filter-btn" onclick="filterArtworks('all')">All</button>
+            <button class="filter-btn" onclick="filterArtworks('abstract')">Abstract</button>
+            <button class="filter-btn" onclick="filterArtworks('portrait')">Portrait</button>
+            <button class="filter-btn" onclick="filterArtworks('landscape')">Landscape</button>
+            <button class="filter-btn" onclick="filterArtworks('still-life')">Still Life</button>
+        </div>
+        <div class="artwork-grid">
+            <div class="artwork" data-category="abstract">
+                <img src="assets/images/art1.jpeg" alt="Artwork 1">
+                <p>Artwork 1 - Abstract</p>
+            </div>
+            <div class="artwork" data-category="portrait">
+                <img src="assets/images/art2.jpeg" alt="Artwork 2">
+                <p>Artwork 2 - Portrait</p>
+            </div>
+            <div class="artwork" data-category="landscape">
+                <img src="assets/images/art3.jpeg" alt="Artwork 3">
+                <p>Artwork 3 - Landscape</p>
+            </div>
+            <div class="artwork" data-category="still-life">
+                <img src="assets/images/art4.jpeg" alt="Artwork 4">
+                <p>Artwork 4 - Still Life</p>
+            </div>
+            <!-- Add more artworks as needed -->
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: info@artgallery.com</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Location: 123 Art Street, Art City, AC 12345</p>
+            </div>
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="artist_profile.html">Artist's Profile</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Art Gallery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts2.js"></script>
+</body>
+</html>
