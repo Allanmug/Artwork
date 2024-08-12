@@ -1,0 +1,210 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #222;
+    color: white;
+    padding: 10px 20px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-menu li {
+    margin: 0 15px;
+}
+
+.main-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.main-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Blog Section Styles */
+.blog {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.chat-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 500px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.message[data-user="user1"] {
+    justify-content: flex-start;
+}
+
+.message[data-user="user2"] {
+    justify-content: flex-end;
+}
+
+.message-content {
+    max-width: 60%;
+    background: #e1ffc7;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.message[data-user="user2"] .message-content {
+    background: #c7e1ff;
+}
+
+.message-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.timestamp {
+    color: #999;
+}
+
+.input-area {
+    display: flex;
+    margin-top: 20px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.input-area button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info, .quick-links, .social-media {
+    margin: 0;
+}
+
+.contact-info p, .social-media a {
+    margin: 0;
+    color: white;
+}
+
+.quick-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-links li {
+    margin-bottom: 10px;
+}
+
+.quick-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.quick-links a:hover {
+    text-decoration: underline;
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Animations */
+@keyframes spark {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.message-content::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #ff9900;
+    border-radius: 50%;
+    animation: spark 0.8s infinite;
+}
+
+.message[data-user="user1"] .message-content::after {
+    top: 10px;
+    right: -10px;
+}
+
+.message[data-user="user2"] .message-content::after {
+    top: 10px;
+    left: -10px;
+}

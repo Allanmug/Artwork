@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Art Gallery</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="assets/images/logo1.png" alt="Art Gallery Logo">
+            </div>
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Cart.html">Cart</a></li>
+                    <li><a href="profile.html">Artist's Profile</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Section -->
+    <section class="blog">
+        <div class="chat-container">
+            <div class="message" data-user="user1">
+                <div class="message-content">
+                    <p>Hello! This is a test message.</p>
+                </div>
+                <div class="message-info">
+                    <span class="username">John Doe</span>
+                    <span class="timestamp">10:30 AM</span>
+                </div>
+            </div>
+            <div class="message" data-user="user2">
+                <div class="message-content">
+                    <p>Hi John! This is a reply to your message.</p>
+                </div>
+                <div class="message-info">
+                    <span class="username">Jane Smith</span>
+                    <span class="timestamp">10:32 AM</span>
+                </div>
+            </div>
+            <!-- Add more messages as needed -->
+        </div>
+        <div class="input-area">
+            <input type="text" id="messageInput" placeholder="Type a message...">
+            <button id="sendMessageBtn">Send</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: artist@example.com</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Location: 123 Art Street, Art City, AC 12345</p>
+            </div>
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Art Gallery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="blog.js"></script>
+</body>
+</html>
